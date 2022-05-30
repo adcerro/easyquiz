@@ -29,36 +29,30 @@ public class TopBar extends javax.swing.JPanel {
     private void initComponents() {
 
         userLabel = new javax.swing.JLabel();
-        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         quizLabel = new javax.swing.JLabel();
-        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         scoreLabel = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(237, 232, 227));
         setPreferredSize(new java.awt.Dimension(400, 35));
-        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
+        setLayout(new java.awt.BorderLayout());
 
         userLabel.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         userLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         userLabel.setText("User:");
-        add(userLabel);
-        add(filler2);
+        add(userLabel, java.awt.BorderLayout.WEST);
 
         quizLabel.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         quizLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        add(quizLabel);
-        add(filler1);
+        add(quizLabel, java.awt.BorderLayout.CENTER);
 
         scoreLabel.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         scoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         scoreLabel.setText("Score: 00");
-        add(scoreLabel);
+        add(scoreLabel, java.awt.BorderLayout.EAST);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.Box.Filler filler1;
-    private javax.swing.Box.Filler filler2;
     private javax.swing.JLabel quizLabel;
     private javax.swing.JLabel scoreLabel;
     private javax.swing.JLabel userLabel;

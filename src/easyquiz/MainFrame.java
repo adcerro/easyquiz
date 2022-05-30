@@ -129,7 +129,7 @@ public class MainFrame extends javax.swing.JFrame {
     private void joinBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_joinBtnActionPerformed
         Quiz q = new Quiz("Test Quiz");
         TopBar bar = new TopBar(nameField.getText(),"Test Quiz");
-        //q.addQuestion(new YesNoQuestion("Is tabata a good person?",true));
+        q.addQuestion(new YesNoQuestion("Is tabata a good person?",true));
         q.addQuestion(new Ans3Question("Is tabata a good person?","yes","of course", "absolutely", 3));
         this.remove(startPane);
         this.add(bar,BorderLayout.NORTH);
