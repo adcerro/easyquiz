@@ -7,6 +7,8 @@ package easyquiz.client;
 import java.awt.Color;
 import java.awt.Font;
 
+
+
 /**
  *
  * @author aland
@@ -22,6 +24,7 @@ public class HighScore extends javax.swing.JPanel {
         highTable.getTableHeader().setFont(new Font("Segoe Print", Font.BOLD,12));
         highTable.getColumnModel().getColumn(0).setPreferredWidth(45);
         highTable.getColumnModel().getColumn(0).setMaxWidth(90);
+        
     }
 
     /**
@@ -44,13 +47,14 @@ public class HighScore extends javax.swing.JPanel {
         highLabel.setForeground(new java.awt.Color(25, 29, 99));
         highLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         highLabel.setText("Highscore!");
-        highLabel.setMaximumSize(new java.awt.Dimension(250, 100));
-        highLabel.setPreferredSize(new java.awt.Dimension(250, 100));
+        highLabel.setAlignmentX(0.5F);
+        highLabel.setMaximumSize(new java.awt.Dimension(500, 150));
+        highLabel.setPreferredSize(new java.awt.Dimension(500, 100));
         add(highLabel, java.awt.BorderLayout.NORTH);
 
-        jScrollPane1.setMaximumSize(new java.awt.Dimension(32767, 800));
-        jScrollPane1.setOpaque(false);
+        jScrollPane1.setFont(new java.awt.Font("Segoe Print", 1, 12)); // NOI18N
 
+        highTable.setFont(new java.awt.Font("Segoe Print", 1, 12)); // NOI18N
         highTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -77,9 +81,18 @@ public class HighScore extends javax.swing.JPanel {
             new String [] {
                 "Place", "User", "Score"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         highTable.setMaximumSize(new java.awt.Dimension(2147483647, 1200));
-        highTable.getTableHeader().setResizingAllowed(false);
+        highTable.setPreferredSize(new java.awt.Dimension(225, 800));
+        highTable.setRowSelectionAllowed(false);
         highTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(highTable);
 
