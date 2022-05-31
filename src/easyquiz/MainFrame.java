@@ -132,12 +132,14 @@ public class MainFrame extends javax.swing.JFrame {
         q.addQuestion(new YesNoQuestion("Is tabata a good person?",true));
         q.addQuestion(new Ans3Question("Is tabata a good person?","yes","of course", "absolutely", 3));
         this.remove(startPane);
-        this.add(bar,BorderLayout.NORTH);
-        if(q.getFirstQuestion() instanceof YesNoQuestion){
-            this.add(new YesNoQuestionPane((YesNoQuestion)q.getFirstQuestion()),BorderLayout.CENTER);
-        }else{
-            this.add(new Ans3QuestionPane((Ans3Question)q.getFirstQuestion()),BorderLayout.CENTER);
-        }
+//        this.add(bar,BorderLayout.NORTH);
+//        if(q.getFirstQuestion() instanceof YesNoQuestion){
+//            this.add(new YesNoQuestionPane((YesNoQuestion)q.getFirstQuestion()),BorderLayout.CENTER);
+//        }else{
+//            this.add(new Ans3QuestionPane((Ans3Question)q.getFirstQuestion()),BorderLayout.CENTER);
+//        }
+        HighScore high = new HighScore();
+        this.add(high, BorderLayout.CENTER);
         this.revalidate();
         this.repaint();
         

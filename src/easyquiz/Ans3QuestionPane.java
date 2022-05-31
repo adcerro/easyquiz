@@ -32,64 +32,53 @@ public class Ans3QuestionPane extends javax.swing.JPanel {
 
         questionLabel = new javax.swing.JLabel();
         opt1Button = new javax.swing.JButton();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 25), new java.awt.Dimension(0, 25), new java.awt.Dimension(0, 25));
         opt2Button = new javax.swing.JButton();
+        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 25), new java.awt.Dimension(0, 25), new java.awt.Dimension(0, 25));
         opt3Button = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(237, 232, 227));
+        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.PAGE_AXIS));
 
         questionLabel.setFont(new java.awt.Font("Segoe Print", 1, 24)); // NOI18N
         questionLabel.setForeground(new java.awt.Color(25, 29, 99));
         questionLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         questionLabel.setText("Your question goes here");
+        questionLabel.setAlignmentX(0.5F);
+        questionLabel.setMaximumSize(new java.awt.Dimension(500, 150));
+        add(questionLabel);
 
         opt1Button.setBackground(new java.awt.Color(244, 243, 246));
         opt1Button.setFont(new java.awt.Font("Segoe Print", 1, 14)); // NOI18N
         opt1Button.setText("Continue");
+        opt1Button.setAlignmentX(0.5F);
         opt1Button.setFocusPainted(false);
+        opt1Button.setMaximumSize(new java.awt.Dimension(200, 42));
+        add(opt1Button);
+        add(filler1);
 
         opt2Button.setBackground(new java.awt.Color(244, 243, 246));
         opt2Button.setFont(new java.awt.Font("Segoe Print", 1, 14)); // NOI18N
         opt2Button.setText("Continue");
+        opt2Button.setAlignmentX(0.5F);
         opt2Button.setFocusPainted(false);
+        opt2Button.setMaximumSize(new java.awt.Dimension(200, 42));
+        add(opt2Button);
+        add(filler2);
 
         opt3Button.setBackground(new java.awt.Color(244, 243, 246));
         opt3Button.setFont(new java.awt.Font("Segoe Print", 1, 14)); // NOI18N
         opt3Button.setText("Continue");
+        opt3Button.setAlignmentX(0.5F);
         opt3Button.setFocusPainted(false);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(193, 193, 193)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(opt1Button, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(opt2Button, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(opt3Button, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 196, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(questionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(questionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(opt1Button, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(opt2Button, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(opt3Button, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(206, Short.MAX_VALUE))
-        );
+        opt3Button.setMaximumSize(new java.awt.Dimension(200, 42));
+        add(opt3Button);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.Box.Filler filler2;
     private javax.swing.JButton opt1Button;
     private javax.swing.JButton opt2Button;
     private javax.swing.JButton opt3Button;

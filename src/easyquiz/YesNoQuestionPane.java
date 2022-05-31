@@ -32,61 +32,46 @@ public class YesNoQuestionPane extends javax.swing.JPanel {
 
         questionLabel = new javax.swing.JLabel();
         trueButton = new javax.swing.JButton();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 25), new java.awt.Dimension(0, 25), new java.awt.Dimension(0, 25));
         falseButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(237, 232, 227));
+        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.PAGE_AXIS));
 
         questionLabel.setFont(new java.awt.Font("Segoe Print", 1, 24)); // NOI18N
         questionLabel.setForeground(new java.awt.Color(25, 29, 99));
         questionLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         questionLabel.setText("Your question goes here");
+        questionLabel.setAlignmentX(0.5F);
+        questionLabel.setMaximumSize(new java.awt.Dimension(500, 150));
+        add(questionLabel);
 
         trueButton.setBackground(new java.awt.Color(244, 243, 246));
         trueButton.setFont(new java.awt.Font("Segoe Print", 1, 14)); // NOI18N
         trueButton.setText("True");
+        trueButton.setAlignmentX(0.5F);
         trueButton.setFocusPainted(false);
+        trueButton.setMaximumSize(new java.awt.Dimension(90, 32));
         trueButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 trueButtonActionPerformed(evt);
             }
         });
+        add(trueButton);
+        add(filler1);
 
         falseButton.setBackground(new java.awt.Color(244, 243, 246));
         falseButton.setFont(new java.awt.Font("Segoe Print", 1, 14)); // NOI18N
         falseButton.setText("False");
+        falseButton.setAlignmentX(0.5F);
         falseButton.setFocusPainted(false);
+        falseButton.setMaximumSize(new java.awt.Dimension(90, 32));
         falseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 falseButtonActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(trueButton, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
-                    .addComponent(falseButton, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE))
-                .addGap(189, 189, 189))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(questionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(questionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(trueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                .addComponent(falseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(149, 149, 149))
-        );
+        add(falseButton);
     }// </editor-fold>//GEN-END:initComponents
 
     private void trueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trueButtonActionPerformed
@@ -100,6 +85,7 @@ public class YesNoQuestionPane extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton falseButton;
+    private javax.swing.Box.Filler filler1;
     private javax.swing.JLabel questionLabel;
     private javax.swing.JButton trueButton;
     // End of variables declaration//GEN-END:variables
