@@ -19,7 +19,7 @@ public class CountdownThread extends Timer {
     /**
      * Creates a thread handling a countdown
      * 
-     * @param deadeline  The time limit
+     * @param deadline  The time limit
      * @param label  The label showing the countdown
      * @param callback  The process executed by this thread 
      */
