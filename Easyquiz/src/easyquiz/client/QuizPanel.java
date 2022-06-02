@@ -52,11 +52,20 @@ public class QuizPanel extends javax.swing.JPanel {
         return countdownPanel;
     }
     
-    
+    /**
+     * Displays the chosen panel
+     * 
+     *@param card  The desired card
+     */
     public void showCard(String card) {
         this.cards.show(this.quizPanel, card);
     }
-    
+    /**
+     * Displays the top bar information (username & score)
+     * 
+     * @param name  The player's name
+     * @param score  The player's score
+     */
     public void setStatusBarData(String name, int score) {
         this.statusBar.showData(name, score);
     }
