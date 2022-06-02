@@ -119,7 +119,7 @@ public class MainFrame extends javax.swing.JFrame {
     /**
      * Removes a player from the room
      * 
-     * @param playerID  The player's unique id.
+     * @param playerId  The player's unique id.
      */
     public void roomLeave(int playerId) {
         this.room.removePlayer(playerId);
