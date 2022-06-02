@@ -21,7 +21,7 @@ public class CountdownThread extends Timer {
      * 
      * @param deadeline  The time limit
      * @param label  The label showing the countdown
-     * @param callback  
+     * @param callback  The process executed by this thread 
      */
     public CountdownThread(long deadline, JLabel label, Runnable callback) {
         super(deadline - System.currentTimeMillis(), callback);

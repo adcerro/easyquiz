@@ -60,7 +60,9 @@ public class MainFrame extends javax.swing.JFrame {
     public TCPSocket getSocket() {
         return socket;
     }
-
+    /**
+     *@return The Socket's handler
+     */
     public SocketHandler getHandler() {
         return handler;
     }
@@ -72,7 +74,9 @@ public class MainFrame extends javax.swing.JFrame {
     public ClientRoom getRoom() {
         return room;
     }
-
+    /**
+     *@return A player object
+     */
     public Player getPlayer() {
         return player;
     }
@@ -80,13 +84,21 @@ public class MainFrame extends javax.swing.JFrame {
     public void setPlayer(Player player) {
         this.player = player;
     }
-
+    /**
+     * Adds the gained score to the player and updates the status bar accordingly
+     * 
+     * @param score  The player's earned score
+     */
     public void addScore(int score) {
         int s = this.player.getScore();
         this.player.setScore(s + score);
         this.quizPanel.setStatusBarData(this.player.getName(), s + score);
     }
-    
+    /**
+     *Displays the desired panel
+     * 
+     * @param name  The panel's name
+     */
     public void showCard(String name) {
         String[] cardPath = name.split("\\.");
         this.cards.show(this.mainPanel, cardPath[0]);
@@ -95,23 +107,43 @@ public class MainFrame extends javax.swing.JFrame {
             this.quizPanel.showCard(cardPath[1]);
         }
     }
-    
+    /**
+     * Adds a player to the game room
+     * 
+     * @param player  A player object
+     */
     public void roomEnter(Player player) {
         this.room.addPlayer(player);
         this.waitingRoomPanel.show(this.room);
     }
-    
+    /**
+     * Removes a player from the room
+     * 
+     * @param playerID  The player's unique id.
+     */
     public void roomLeave(int playerId) {
         this.room.removePlayer(playerId);
         this.waitingRoomPanel.show(this.room);
     }
-    
+    /**
+     * Adds a player to the game
+     * 
+     * @param code  The code of the room
+     * @param host  The player hosting room
+     * @param players  The HashMap with all the joined players
+     */
     public void joinRoom(UUID code, Player host, HashMap<Integer, Player> players) {
         this.room = new ClientRoom(code, host, players);
         showCard("waiting");
         this.waitingRoomPanel.show(this.room);
     }
-    
+    /**
+     * Displays the loading screen for the next question
+     * 
+     * @param question  A question object
+     * @param starting  The countdown's starting number
+     * @param deadline  The time limit for the countdown
+     */
     public void nextQuestion(Question question, long starting, long deadline) {
         if (this.room == null)
             return;
@@ -120,12 +152,23 @@ public class MainFrame extends javax.swing.JFrame {
         this.countdownPanel.countdown(starting, deadline, question);
         this.quizPanel.setStatusBarData(this.player.getName(), this.player.getScore());
     }
-    
+    /**
+     * Displays a three option question
+     * 
+     * @param deadline  The time limit 
+     * @param question  A question object
+     */
     public void showQuestion(Question question, long deadline) {
         showCard("quiz.ans3");
         this.ans3Panel.showQuestion((Ans3Question) question, deadline);
     }
-    
+    /**
+     * Sends the chosen answer to the server.
+     * <p>
+     * 
+     * @param option  The selected option's index
+     * @param score  The score of that question
+     */
     public void sendAnswer(int option, int score) {
         this.socket.send(MessageParser.create("ans", "sel=" + option, "score=" + score));
     }
@@ -306,7 +349,9 @@ public class MainFrame extends javax.swing.JFrame {
         
         this.socket.send(MessageParser.create("room", "name=" + name));
     }//GEN-LAST:event_newBtnActionPerformed
-
+    /**
+     *@return The instance of the frame
+     */
     public static MainFrame getInstance() {
         if (instance == null) {
             instance = new MainFrame();

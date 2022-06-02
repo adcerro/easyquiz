@@ -36,7 +36,11 @@ public class HighScore extends javax.swing.JPanel {
         this.model.addColumn("Score");
         this.highTable.setModel(this.model);
     }
-
+    /**
+     * Displays all th players' scores in a table.
+     * 
+     * @param players  An ArrayList of players
+     */
     public void showResults(ArrayList<Player> players) {
         Collections.sort(players, (p1, p2) -> {
             return p1.getScore() - p2.getScore();
