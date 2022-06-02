@@ -25,7 +25,14 @@ public class CountdownPanel extends javax.swing.JPanel {
     public CountdownPanel() {
         initComponents();
     }
-
+    /**
+     * Sets the countdown in the panel
+     * <p>
+     * 
+     * @param starting  The starting time
+     * @param deadline  The time limit
+     * @param question  A question object
+     */
     public void countdown(long starting, long deadline, Question question) {
         this.countdownThread = new CountdownThread(starting, this.countdownLabel, () -> {
             MainFrame.getInstance().showQuestion(question, deadline);
