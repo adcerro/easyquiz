@@ -77,7 +77,7 @@ public class Ans3QuestionPane extends javax.swing.JPanel {
      * <p>
      * The points are caclulated with the remaining time
      * 
-     * @param index The number assigned to the selected button
+     * @param index  The number assigned to the selected button
      */
     public void selectOption(int index) {
         if (this.selected > -1)
